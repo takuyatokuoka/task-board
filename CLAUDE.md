@@ -2,7 +2,16 @@
 
 ## プロジェクト概要
 
-タスク管理ボードアプリケーション。
+Vite + React で構築したタスク管理ボードアプリケーション。
+
+## 開発コマンド
+
+```bash
+npm install       # 依存パッケージのインストール
+npm run dev       # 開発サーバー起動 (http://localhost:5173)
+npm run build     # プロダクションビルド
+npm run preview   # ビルド成果物のプレビュー
+```
 
 ## Git 運用ルール
 
