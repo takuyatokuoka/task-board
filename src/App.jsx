@@ -1,11 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
-let nextId = 1
+function loadTasks() {
+  try {
+    const saved = localStorage.getItem('tasks')
+    return saved ? JSON.parse(saved) : []
+  } catch {
+    return []
+  }
+}
+
+function maxId(tasks) {
+  return tasks.reduce((max, t) => Math.max(max, t.id), 0)
+}
+
+let nextId
 
 export default function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(() => {
+    const saved = loadTasks()
+    nextId = maxId(saved) + 1
+    return saved
+  })
   const [input, setInput] = useState('')
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   function addTask() {
     const text = input.trim()
