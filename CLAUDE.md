@@ -4,6 +4,33 @@
 
 Vite + React で構築したタスク管理ボードアプリケーション。
 
+## デプロイ先
+
+https://takuyatokuoka.github.io/task-board/
+
+`main` ブランチへのプッシュで GitHub Actions が自動ビルド・デプロイする。
+
+## 技術スタック
+
+| カテゴリ | 技術 |
+|---|---|
+| UI ライブラリ | React 19 |
+| ビルドツール | Vite 8 |
+| 言語 | JavaScript (JSX) |
+| スタイリング | CSS Modules (`.css` ファイル) |
+| 状態管理 | React 組み込み (`useState` / `useEffect`) |
+| 永続化 | `localStorage` |
+| CI/CD | GitHub Actions |
+| ホスティング | GitHub Pages |
+
+## コンポーネント命名規約
+
+- **ファイル名**: PascalCase（例: `TaskItem.jsx`, `AddTaskForm.jsx`）
+- **コンポーネント関数**: PascalCase で `export default`（例: `export default function TaskItem() {}`）
+- **CSS クラス名**: kebab-case（例: `.task-item`, `.add-btn`）
+- **props / 変数名**: camelCase（例: `onDelete`, `isDone`）
+- **1ファイル1コンポーネント**を原則とし、`src/` 直下に配置する
+
 ## 開発コマンド
 
 ```bash
